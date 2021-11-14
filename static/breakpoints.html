@@ -17,15 +17,21 @@
 
   <section id="preview">
     <h1>The power of breakpoints</h1>
-    <p>Sed ultricies dolor non ante vulputate hendrerit. Vivamus sit amet suscipit sapien. Nulla iaculis eros a elit pharetra egestas.</p>
 
     <article id="article">
-      <h2>Allows you to pause any<sup>*</sup> code in runtime</h2>
-      <!--sometimes tricky to put in minimized code-->
-      <p>Everybody uses it.</p>
+      <img src="img/breakpoints-narrow.png" style="float: right;" alt="breakpoints">
+
+      <h2>Plain breakpoints</h2>
+      <p>Just stops, same as <code>breakpoint</code>, but works in runtime</p>
+      <h2>Conditional breakpoints</h2>
+      <h2>Logpoints</h2>
+      <h2>Never pause here</h2>
+      <p>Literally a conditional breakpoint with <code>false</code>. Works for ... <!--TODO--></p>
       <h2>Tricks</h2>
-      <p>Allows to break on a specific line in code that you control.</p>
-      <footer><small>Duis nec elit placerat, suscipit nibh quis, finibus neque.</small></footer>
+      <ul>
+        <li>execute code without actually stopping</li>
+        <li><code>new Error().stack</code></li>
+      </ul>
     </article>
 
     <div class="grid">
@@ -33,10 +39,9 @@
         <button class="secondary">Back</button>
       </a>
       <div><!--spacer--></div>
-      <a href="404.html">
+      <a href="other-breakpoints.html">
         <button onclick="//todo">Easy, next!</button>
       </a>
-    </div>
     </div>
   </section>
 
