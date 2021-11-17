@@ -15,32 +15,30 @@
 
 <main class="container">
 
-  <section id="preview">
-    <h1>The power of breakpoints Pt.2</h1>
+  <section id="content">
+    <h1>Property breakpoints</h1>
+    <p>When normal breakpoints are not enough</p>
 
+    <script>
+      window.toLoadLater = `
     <article id="article">
       <h2>Dom breakpoints</h2>
       <p></p>
 
-      <h2>XHR Fetch breakpoints</h2>
-      <p>Breaks on HTTP request from <code>XMLHttpRequest</code> or <code>fetch</code>, possible to filter by URL</p>
-
-      <h2>Event listeners breakpoints</h2>
-      <p>Will stop on any event you like!</p>
-
-      <h2>CSP Violation breakpoints</h2>
-      <p>Catch exceptions on Trusted Type Violations</p>
     </article>
 
     <div class="grid">
-      <a href="breakpoints.html">
+      <a href="other-breakpoints.html">
         <button class="secondary">Back</button>
       </a>
-      <div><!--spacer--></div>
-      <a href="overrides.html">
-        <button onclick="//todo">More, please!</button>
+      <div></div>
+      <a href="404.html">
+         <button onclick="//todo">More, please!</button>
       </a>
     </div>
+      `;
+      console.debug('content loaded');
+    </script>
   </section>
 
 </main>
@@ -48,5 +46,6 @@
 <footer class="container">
   WebCore 2021
 </footer>
+<script id="overrides-script" src="js/overrides.js"></script>
 </body>
 </html>

@@ -22,14 +22,16 @@
       <img src="img/breakpoints-narrow.png" style="float: right;" alt="breakpoints">
 
       <h2>Plain breakpoints</h2>
-      <p>Just stops, same as <code>breakpoint</code>, but works in runtime</p>
+      <p>Just stops, same as <code>debugger;</code> but works in runtime</p>
       <h2>Conditional breakpoints</h2>
+      <p>Breakpoint with condition, stops only when passed expression returns <code>true</code></p>
       <h2>Logpoints</h2>
+      <p>Just logs, same as <code>console.log();</code> but works in runtime</p>
       <h2>Never pause here</h2>
       <p>Literally a conditional breakpoint with <code>false</code>. Works for ... <!--TODO--></p>
       <h2>Tricks</h2>
       <ul>
-        <li>execute code without actually stopping</li>
+        <li>execute code without actually stopping with <code>(...) && false</code></li>
         <li><code>new Error().stack</code></li>
       </ul>
     </article>
