@@ -1,14 +1,22 @@
-const loadAction = 'LoadLater';
 window.addEventListener('DOMContentLoaded', () => {
-  let element = document.getElementById('content');
-  let code = window[`to${loadAction}`];
-  safeAppendHtml(element, code);
+  loadTemplate('Article')
+    .then(loadStyle)
+    .catch(() => loadTemplate('Error'))
 });
 
-function safeAppendHtml(element, code) {
-  if (element && element instanceof HTMLElement && typeof code === 'string') {
-    element.innerHTML += code;
-  }
+async function loadTemplate(name) {
+  const template = window.templates['template' + name];
+  const target = document.getElementById('content');
+  target.innerHTML = '';
+  target.appendChild(template.cloneNode(true));
+}
+
+async function loadStyle() {
+  const response = await fetch('css/overrides.css');
+  const cssSnippet = await response.text();
+  const styleSheet = new CSSStyleSheet();
+  await styleSheet.replace(cssSnippet);
+  document.adoptedStyleSheets = [styleSheet];
 }
 
 const script = document.getElementById('overrides-script');

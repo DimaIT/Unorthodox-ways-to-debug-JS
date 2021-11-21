@@ -9,23 +9,46 @@
 
   <link rel="stylesheet" href="css/pico.css">
   <link rel="stylesheet" href="css/main.css">
+  <script src="js/common.js"></script>
 </head>
 
 <body>
 
 <main class="container">
 
-  <section id="content">
+  <section>
     <h1>Property breakpoints</h1>
-    <p>When normal breakpoints are not enough</p>
+    <p>When regular breakpoints are not enough</p>
 
-    <script>
-      window.toLoadLater = `
-    <article id="article">
-      <h2>Dom breakpoints</h2>
-      <p></p>
+    <article id="content">
 
     </article>
+
+    <template id="article-template">
+      <p>As a part of a DevTools Property breakpoints are present in Firefox</p>
+
+      <h2>No content yet</h2>
+      <p></p>
+
+      <h2>Tricks</h2>
+      <ul>
+        <li><code>new Error().stack</code></li>
+      </ul>
+    </template>
+
+    <template id="error-template">
+      <h2>Error happened here</h2>
+      <p>Maybe try to reload the page?</p>
+      <p>Or restart browser?</p>
+      <p>Our code is fine the problem should be on your side.</p>
+    </template>
+
+    <script>
+      window.templates = {
+        templateArticle: document.getElementById('article-template').content,
+        templateError: document.getElementById('error-template').content,
+      };
+    </script>
 
     <div class="grid">
       <a href="other-breakpoints.html">
@@ -33,14 +56,10 @@
       </a>
       <div></div>
       <a href="404.html">
-         <button onclick="//todo">More, please!</button>
+        <button>Next</button>
       </a>
     </div>
-      `;
-      console.debug('content loaded');
-    </script>
   </section>
-
 </main>
 
 <footer class="container">
