@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="css/pico.css">
   <link rel="stylesheet" href="css/main.css">
   <script src="js/common.js"></script>
+
+  <meta http-equiv="Content-Security-Policy" content="trusted-types bar;">
 </head>
 
 <body>
@@ -21,16 +23,33 @@
 
     <article id="article">
       <h2>Dom breakpoints</h2>
-      <p></p>
+      <!-- not breaks on <details> summary attr change -->
+      <div>Can break on:
+        <ul>
+          <li>subtree modifications</li>
+          <li>attribute modifications</li>
+          <li>node removal</li>
+        </ul>
+      </div>
 
       <h2>XHR Fetch breakpoints</h2>
-      <p>Breaks on HTTP request from <code>XMLHttpRequest</code> or <code>fetch</code>, possible to filter by URL</p>
+      <p>
+        Breaks on a HTTP request from
+        <code><s>XMLHttpRequest</s></code>
+        or
+        <code><u>fetch()</u></code>,
+        possible to filter by URL
+      </p>
 
       <h2>Event listeners breakpoints</h2>
       <p>Will stop on any event you like!</p>
 
-      <h2>CSP Violation breakpoints</h2>
-      <p>Catch exceptions on Trusted Type Violations</p>
+      <details>
+        <summary><h2>Even...</h2></summary>
+        <h2>Trusted Type Violations breakpoints</h2>
+        <p>Catch exceptions on Trusted Type Violations (chrome only)</p>
+        <a onclick="trustedTypes.createPolicy('unknown', {})">Trigger error</a>
+      </details>
     </article>
 
     <div class="grid">

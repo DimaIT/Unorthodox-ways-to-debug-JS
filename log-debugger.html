@@ -19,15 +19,24 @@
     <section>
       <h1><b>Orthodox</b> ways to debug JS</h1>
 
-      <article id="article">
-        <h2><code>console.log();</code></h2>
+      <article>
+        <h2>
+          <code><s>console</s>.<u>log()</u>;</code>
+        </h2>
         <p>Everybody uses it.</p>
-        <h2><code>debugger;</code></h2>
+
+        <h2>
+          <code><b>debugger</b>;</code>
+        </h2>
         <p>Allows to break on a specific line in code that you control.</p>
+
         <h2>Tricks:</h2>
         <ul>
-          <li>in browser editor</li>
-          <li><code>setTimeout(() => {debugger}, 3000);</code></li>
+<!--          <li>in browser editor</li>-->
+          <li>
+            <code><u>setTimeout</u>(() => { <b>debugger</b>; }, <i>3000</i>);</code>
+            in the browser's console
+          </li>
         </ul>
       </article>
 

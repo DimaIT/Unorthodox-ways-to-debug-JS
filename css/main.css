@@ -4,10 +4,44 @@
   padding-right: 20%;
 }
 
-code {
-  color: yellow;
-}
-
 h1, h2 {
   margin-bottom: 1.2rem
+}
+
+code {
+  --code-color: #c2c28c;
+}
+
+code s {
+  color: #a282c5;
+  text-decoration: none;
+}
+
+[data-theme=dark] {
+  --code-value-color: #ffd600;
+}
+
+@media (min-width: 1200px) {
+  body > header,
+  body > main,
+  body > footer,
+  section {
+    --block-spacing-vertical: calc(var(--spacing) * 3);
+  }
+}
+
+article details {
+  margin-top: 2.625rem;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+article details summary::after {
+  display: none;
+}
+
+article details summary {
+  line-height: inherit;
+  border-bottom: none;
+  text-decoration: underline;
 }

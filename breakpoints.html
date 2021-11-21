@@ -22,16 +22,50 @@
       <img src="img/breakpoints-narrow.png" style="float: right;" alt="breakpoints">
 
       <h2>Plain breakpoints</h2>
-      <p>Just stops, same as <code>debugger;</code> but works in runtime</p>
+      <p>
+        Just stops, same as
+        <code><b>debugger</b>;</code>
+        but works in runtime
+      </p>
+
       <h2>Conditional breakpoints</h2>
-      <p>Breakpoint with condition, stops only when passed expression returns <code>true</code></p>
+      <p>
+        Breakpoint with condition, stops only when passed expression returns
+        <code><i>true</i></code>
+      </p>
+
       <h2>Logpoints</h2>
-      <p>Just logs, same as <code>console.log();</code> but works in runtime</p>
+      <p>
+        Just logs, same as
+        <code><s>console</s>.<u>log()</u>;</code>
+        but works in runtime
+      </p>
+
       <h2>Never pause here</h2>
-      <p>Literally a conditional breakpoint with <code>false</code>. Works for ... <!--TODO--></p>
-      <h2>Tricks</h2>
+      <p>
+        Literally a conditional breakpoint with <code><i>false</i></code>.
+        Works with
+      </p>
       <ul>
-        <li>execute code without actually stopping with <code>(...) && false</code></li>
+        <li>
+          <code><b>debugger</b>;</code>
+        </li>
+        <li>Pause on (caught) exceptions</li>
+      </ul>
+      <a onclick="here()">Try here</a>
+      <script>
+        function here() {
+          debugger;
+          try {
+            throw 'caught';
+          } catch (e) {}
+          throw 'uncaught'
+        }
+      </script>
+
+      <h2>Tricks:</h2>
+      <ul>
+        <li>execute code without actually stopping with <code>(...) && <i>false</i></code></li>
       </ul>
     </article>
 
@@ -41,8 +75,18 @@
       </a>
       <div><!--spacer--></div>
       <a href="other-breakpoints.html">
-        <button onclick="//todo">Easy, next!</button>
+        <button id="next">Easy, next!</button>
       </a>
+
+      <script>
+        document.getElementById('next').onclick = e => {
+          var allowed = false;
+          if (!allowed) {
+            alert('You shall not pass!')
+            e.preventDefault();
+          }
+        }
+      </script>
     </div>
   </section>
 
