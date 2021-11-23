@@ -36,6 +36,30 @@
           <li>
             <code><u>setTimeout</u>(() => { <b>debugger</b>; }, <i>3000</i>);</code>
             in the browser's console
+            <p>It helps to debug <a id="modal-btn">focus based modals</a></p>
+
+            <article id="modal" style="position: absolute;
+                                       top: 25%;
+                                       left: 40%;
+                                       background-color: #334e61;
+                                       display: none;
+                                       padding: 20px;
+                                       text-align: center">
+              <h1>Nice modal bro</h1>
+              <img src="img/cheems-doge-png.png" alt="cheems doge" style="width: 400px">
+              <img id="hand" src="img/hand.png" alt="cheems doge" style="position: absolute; left: 100px; top: 100px; width: 200px; display: none">
+              <button onclick="hand.style.displey = ''">Pet Cheems</button>
+            </article>
+
+            <script>
+              const modalButton = document.getElementById('modal-btn');
+              const modal = document.getElementById('modal');
+              modalButton.onclick = () => {
+                modal.style.display = '';
+                modal.focus();
+              }
+              document.onmouseleave = () => modal.style.display = 'none';
+            </script>
           </li>
         </ul>
       </article>
