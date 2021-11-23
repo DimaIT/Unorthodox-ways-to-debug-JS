@@ -9,10 +9,15 @@ h1, h2 {
 }
 
 code {
+  line-height: 1.5;
   --code-color: #c2c28c;
 }
 
-code s {
+code em { /*comment*/
+  color: #627481;
+}
+
+code s { /*object*/
   color: #a282c5;
   text-decoration: none;
 }

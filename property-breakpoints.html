@@ -18,21 +18,46 @@
 
   <section>
     <h1>Property breakpoints</h1>
-    <p>When regular breakpoints are not enough</p>
 
     <article id="content">
 
     </article>
 
     <template id="article-template">
-      <p>As a part of a DevTools Property breakpoints are present in Firefox</p>
+      <p>
+        As a part of a DevTools property breakpoints are present in Firefox.
+        <br>
+        You can pause on property get or set.
+      </p>
 
-      <h2>No content yet</h2>
-      <p></p>
+      <h2>Under the hood</h2>
+      <p>In Firefox property breakpoints are based on property descriptors</p>
+      <img src="img/ff-descriptors.png" alt="Property descriptors in Firefox">
+
+      <h2>DIY property breakpoints</h2>
+      <p>Nothing stops you from doing it yourself</p>
+      <code style="width: 100%">
+        <b>var</b> obj = { prop: <i>10</i> };
+      <br>
+      <br>
+        <s>Object</s>.<u>defineProperty</u>(obj, <i>'prop'</i>, {
+        <br>
+        &emsp; <u>get</u>() { <b>debugger</b>; },
+        <br>
+        &emsp; <u>set</u>(v) { <b>debugger</b>; },
+        <br>
+        )
+      <br>
+      <br>
+        <s>obj</s>.prop = <i>20</i>; <em>// debugger will stop here</em>
+      </code>
+      <p>
+
+      </p>
 
       <h2>Tricks</h2>
       <ul>
-        <li><code>new Error().stack</code></li>
+        <li><code><b>new</b> <s>Error</s>().stack</code></li>
       </ul>
     </template>
 
