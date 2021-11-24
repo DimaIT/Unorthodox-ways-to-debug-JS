@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="utf-8">
+  <title>Overrides</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="icon.png">
+
+  <link rel="stylesheet" href="css/pico.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/common.js"></script>
+</head>
+
+<body>
+
+<main class="container">
+
+  <section>
+    <h1>Native overrides</h1>
+
+    <article id="form-article">
+      <h2>Fill out the form to see the content</h2>
+      <br>
+      <form id="form">
+        <div class="grid">
+          <input type="text" name="firstname" placeholder="First name" aria-label="First name" required="">
+          <input type="email" name="email" placeholder="Email address" aria-label="Email address" required="">
+          <button id="submit" type="submit">Subscribe</button>
+        </div>
+      </form>
+    </article>
+
+    <article id="content" style="display: none">
+      <h2>Override native properties and methods</h2>
+      <p>
+        To trace origins of the side effects on a page
+      </p>
+
+      <h2>Trick of the day:</h2>
+      <code><s>console</s>.<u>trace()</u>;</code>
+      and
+      <code><b>new</b> <s>Error</s>().stack</code>
+    </article>
+
+    <div class="grid">
+      <a href="property-breakpoints.html">
+        <button class="secondary">Back</button>
+      </a>
+      <div></div>
+      <a href="credits.html">
+        <button>Finish</button>
+      </a>
+    </div>
+  </section>
+</main>
+
+<script>
+  const submitButton = document.getElementById('submit');
+  const formArticle = document.getElementById('form-article');
+  const content = document.getElementById('content');
+
+  submitButton.onclick = () => {
+    formArticle.style.display = 'none';
+    content.style.display = '';
+  }
+  // alert('here')
+</script>
+
+
+<footer class="container">
+  WebCore 2021
+</footer>
+
+<script src="js/lib/jquery3.6.js"></script>
+<script src="js/lib/react.js"></script>
+</body>
+</html>
