@@ -9,6 +9,28 @@
 
   <link rel="stylesheet" href="css/pico.css">
   <link rel="stylesheet" href="css/main.css">
+  <style>
+    #modal {
+      position: absolute;
+      top: 100px;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      width: 400px;
+      background-color: #334e61;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #hand {
+      position: absolute;
+      left: 80px;
+      top: 39px;
+      width: 200px;
+    }
+  </style>
+
   <script src="js/common.js"></script>
 </head>
 
@@ -30,38 +52,12 @@
         </h2>
         <p>Allows to break on a specific line in code that you control.</p>
 
-        <h2>Tricks:</h2>
-        <ul>
-<!--          <li>in browser editor</li>-->
-          <li>
-            <code><u>setTimeout</u>(() => { <b>debugger</b>; }, <i>3000</i>);</code>
-            in the browser's console
-            <p>It helps to debug <a id="modal-btn">focus based modals</a></p>
+        <h2>Trick of the day:</h2>
 
-            <article id="modal" style="position: absolute;
-                                       top: 25%;
-                                       left: 35%;
-                                       background-color: #334e61;
-                                       display: none;
-                                       padding: 20px;
-                                       text-align: center">
-              <h1>Nice modal bro</h1>
-              <img src="img/cheems-doge-png.png" alt="cheems doge" style="width: 400px">
-              <img id="hand" src="img/hand.png" alt="cheems doge" style="position: absolute; left: 100px; top: 100px; width: 200px; display: none">
-              <button onclick="hand.style.displey = ''">Pet Cheems</button>
-            </article>
+        <code><u>setTimeout</u>(() => { <b>debugger</b>; }, <i>3000</i>);</code>
+        in the browser's console
+        <p>Helps to debug <a id="modal-btn">auto closing modals</a></p>
 
-            <script>
-              const modalButton = document.getElementById('modal-btn');
-              const modal = document.getElementById('modal');
-              modalButton.onclick = () => {
-                modal.style.display = '';
-                modal.focus();
-              }
-              document.onmouseleave = () => modal.style.display = 'none';
-            </script>
-          </li>
-        </ul>
       </article>
 
       <div class="grid">
@@ -74,8 +70,31 @@
         </a>
       </div>
     </section>
-
   </main>
+
+  <article id="modal">
+    <h1>Nice modal bro</h1>
+    <img src="img/cheems-doge-png.png" alt="cheems doge" style="width: 400px">
+    <img id="hand" src="img/hand.png" alt="a hand" style="display: none">
+    <button id="pet-btn" onclick="hand.style.displey = ''">Pet Cheems</button>
+  </article>
+
+  <script>
+    const modalButton = document.getElementById('modal-btn');
+    const modal = document.getElementById('modal');
+    const hand = document.getElementById('hand');
+    modal.parentElement.removeChild(modal);
+
+    modalButton.onclick = () => {
+      document.body.appendChild(modal);
+    }
+
+    document.onmouseleave = () => {
+      if (modal.parentElement) {
+        document.body.removeChild(modal);
+      }
+    }
+  </script>
 
   <footer class="container">
     WebCore 2021

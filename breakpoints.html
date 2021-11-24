@@ -42,17 +42,14 @@
       </p>
 
       <h2>Never pause here</h2>
-      <p>
-        Literally a conditional breakpoint with <code><i>false</i></code>.
-        Works with
-      </p>
+      <span>Helps to deal with unwanted breaks on:</span>
       <ul>
         <li>
           <code><b>debugger</b>;</code>
         </li>
         <li>Pause on (caught) exceptions</li>
       </ul>
-      <h2><a onclick="here()">Play here</a></h2>
+      <p><a onclick="here()">Play here</a></p>
       <script>
         function here() {
           debugger;
@@ -63,10 +60,10 @@
         }
       </script>
 
-      <h2>Tricks:</h2>
-      <ul>
-        <li>execute code without actually stopping with <code>(...) && <i>false</i></code></li>
-      </ul>
+      <h2>Trick of the day:</h2>
+      <p>
+        execute code without actually stopping with <code>(...) && <i>false</i></code>
+      </p>
     </article>
 
     <div class="grid">

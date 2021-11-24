@@ -1,3 +1,6 @@
+:root {
+  --typography-spacing-vertical: 1rem;
+}
 
 .indented {
   padding-left: 20%;
@@ -5,7 +8,13 @@
 }
 
 h1, h2 {
-  margin-bottom: 1.2rem
+  --typography-spacing-vertical: 1.5rem;
+  margin-bottom: 0.7rem;
+}
+
+
+h2 code {
+  font-size: inherit;
 }
 
 code {
@@ -35,8 +44,11 @@ code s { /*object*/
   }
 }
 
+article {
+  padding-top: 30px;
+}
+
 article details {
-  margin-top: 2.625rem;
   border-bottom: none;
   padding-bottom: 0;
 }
@@ -46,6 +58,7 @@ article details summary::after {
 }
 
 article details summary {
+  color: var(--primary);
   line-height: inherit;
   border-bottom: none;
   text-decoration: underline;
