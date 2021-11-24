@@ -9,7 +9,6 @@
 
   <link rel="stylesheet" href="css/pico.css">
   <link rel="stylesheet" href="css/main.css">
-  <script src="js/common.js"></script>
 </head>
 
 <body>
@@ -31,7 +30,7 @@
     <template id="article-template">
       <h2>Under the hood</h2>
       <p>In Firefox property breakpoints are based on property descriptors</p>
-      <img src="img/ff-descriptors.png" alt="Property descriptors in Firefox">
+      <img src="img/ff-descriptors.png" alt="Property descriptors in Firefox" style="max-height: 250px;">
 
       <h2>DIY property breakpoints</h2>
       <p>Nothing stops you from doing it yourself</p>
@@ -45,7 +44,7 @@
         <br>
         &emsp; <u>set</u>(v) { <b>debugger</b>; },
         <br>
-        )
+        });
       <br>
       <br>
         <s>obj</s>.prop = <i>20</i>; <em>// debugger will stop here</em>
@@ -60,6 +59,7 @@
     </template>
 
     <script>
+      // TODO: put in js file
       window.templates = {
         templateArticle: document.getElementById('article-template').content,
         templateError: document.getElementById('error-template').content,
@@ -71,7 +71,7 @@
         <button class="secondary">Back</button>
       </a>
       <div></div>
-      <a href="404.html">
+      <a href="overrides.html">
         <button>Next</button>
       </a>
     </div>

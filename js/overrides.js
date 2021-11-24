@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
   loadTemplate('Article')
     .then(loadStyle)
-    .catch(() => loadTemplate('Error'))
+    .catch(e => loadTemplate('Error'))
 });
 
 async function loadTemplate(name) {
