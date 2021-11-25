@@ -78,12 +78,13 @@
       </a>
       <div><!--spacer--></div>
       <a href="other-breakpoints.html">
-        <button id="next">Easy, next!</button>
+        <button id="next">Next</button>
       </a>
 
       <script>
         document.getElementById('next').onclick = e => {
           var allowed = false;
+          console.log('Allowed', allowed);
           if (!allowed) {
             alert('You shall not pass!')
             e.preventDefault();
