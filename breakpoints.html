@@ -52,7 +52,12 @@
       <p><a onclick="here()">Play here</a></p>
       <script>
         function here() {
-          // TODO: more code to play with breakpoints ??
+          const time = Date.now();
+
+          if (time % 7 === 0) {
+            console.log('Lucky you!')
+          }
+
           debugger;
           try {
             throw 'caught';

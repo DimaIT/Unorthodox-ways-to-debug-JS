@@ -39,6 +39,15 @@
   var REACT_OFFSCREEN_TYPE = 0xeae2;
   var REACT_LEGACY_HIDDEN_TYPE = 0xeae3;
 
+  var reportingEnabled = true;
+  function report() {
+    if (reportingEnabled) {
+      alert('3 seconds passed, just FYI');
+      setTimeout(report, 3000);
+    }
+  }
+  setTimeout(report, 3000);
+
   if (typeof Symbol === 'function' && Symbol.for) {
     var symbolFor = Symbol.for;
     REACT_ELEMENT_TYPE = symbolFor('react.element');
