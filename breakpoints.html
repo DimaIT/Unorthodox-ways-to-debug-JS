@@ -85,7 +85,7 @@
         document.getElementById('next').onclick = e => {
           var allowed = false;
           console.log('Allowed', allowed);
-          if (!allowed) {
+          if (!allowed && !localStorage.presentationMode) {
             alert('You shall not pass!')
             e.preventDefault();
           }
@@ -99,5 +99,6 @@
 <footer class="container">
   WebCore 2021
 </footer>
+<script src="js/mode-switch.js"></script>
 </body>
 </html>

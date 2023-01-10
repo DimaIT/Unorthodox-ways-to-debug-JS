@@ -7,7 +7,7 @@ termsCheckbox.onchange = () => {
 };
 
 function next() {
-  if (termsAccepted !== true) {
+  if (termsAccepted !== true && !localStorage.presentationMode) {
     console.log('termsAccepted:', termsAccepted);
     termsCheckbox.setAttribute('aria-invalid', 'true');
     alert('Accept terms first!');
